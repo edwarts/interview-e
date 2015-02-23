@@ -48,9 +48,6 @@ public class InsertAndRetrievTest {
 		System.out.println("The size of ImageStore in this test 2 is "+is.size());
 		assertTrue(is.fetchImage("Hotel_A").equals(imageB)); //only ImageA can be store with name Hotel_A
 		System.out.println(is.fetchImage("Hotel_A")[1]);
-	
-		
-		System.out.println(is.fetchImage("Hotel_A")[1]);
 		try {
 			assertTrue(is.fetchImage("Hotel a").equals(imageB));// ImageB had been used to replace ImageA and it makes the Hotel a can be store as ImageB is exist
 		} catch (Exception e) {
@@ -72,7 +69,7 @@ public class InsertAndRetrievTest {
 			is.storeImage("Hotel a", imageA);
 			is.storeImage("Hotel_B", imageB);
 			assertTrue(is.size()==2);
-			System.out.println("The size of ImageStore in this test is "+is.size());
+			System.out.println("The size of ImageStore in this test with MD5 is "+is.size());
 			assertTrue(is.fetchImage("Hotel_A").equals(imageA));
 			System.out.println("The position 1 of Hotel_A image is "+is.fetchImage("Hotel_A")[1]);// verify from the same position in two images 
 			assertTrue(is.fetchImage("Hotel_B").equals(imageB));
